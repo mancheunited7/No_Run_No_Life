@@ -20,6 +20,8 @@
         .dropdown-menu
           = link_to "#{t '.question_corner'}", '',  class: "dropdown-item"
           = link_to "#{t '.wanted_corner'}", '',  class: "dropdown-item"
+      %li.nav-item
+        %a.nav-link #{t '.everyone_record'}
     %ul.navbar-nav.ml-auto
       %li.nav-item.dropdown
         %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{t '.welcome_to'}
