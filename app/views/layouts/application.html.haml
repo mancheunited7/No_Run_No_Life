@@ -2,10 +2,11 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title NorunNolife
+    %title No Run, No Life
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag('/favicon-tsuchinoko.jpg')
   %body
     .container-fluid
       = render 'shared/header'
