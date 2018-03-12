@@ -1,0 +1,30 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  %button.navbar-toggler{"data-toggle" => "collapse", :type => "button"}
+  .collapse.navbar-collapse
+    %ul.navbar-nav
+      %li.nav-item
+        %a.nav-link #{t '.top'}
+      %li.nav-item.dropdown
+        %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{t '.mypage'}
+        .dropdown-menu
+          = link_to "#{t '.mypagetop'}", '',  class: "dropdown-item"
+          = link_to "#{t '.where_run'}", '',  class: "dropdown-item"
+          = link_to "#{t '.practice_record'}", '',  class: "dropdown-item"
+      %li.nav-item.dropdown
+        %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{t '.competition_info_corner'}
+        .dropdown-menu
+          = link_to "#{t '.get_competition_info'}", '',  class: "dropdown-item"
+          = link_to "#{t '.search_competition'}", '',  class: "dropdown-item"
+      %li.nav-item.dropdown
+        %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{t '.question_wanted_corner'}
+        .dropdown-menu
+          = link_to "#{t '.question_corner'}", '',  class: "dropdown-item"
+          = link_to "#{t '.wanted_corner'}", '',  class: "dropdown-item"
+      %li.nav-item
+        %a.nav-link #{t '.everyone_record'}
+    %ul.navbar-nav.ml-auto
+      %li.nav-item.dropdown
+        %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{t '.welcome_to'}
+        .dropdown-menu
+          = link_to "#{t '.edit_account'}", '',  class: "dropdown-item"
+          = link_to "#{t '.logout'}", '',  class: "dropdown-item"
