@@ -19,4 +19,8 @@ class User < ApplicationRecord
     end
     return user
   end
+
+  def self.create_uuid
+    SecureRandom.uuid
+  end
 end
