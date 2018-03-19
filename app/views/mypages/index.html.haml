@@ -1,0 +1,36 @@
+/%h1= t('.title', current_user: current_user.name)
+%h3= t('.run_level')
+%h3= t('.run_experience')
+%h3= t '.best_time_list'
+.table-responsive
+  %table.table.table-striped.table-borderd.table-hover
+    %thead
+      %tr
+        %th= t '.best_time_5'
+        %th= t '.best_time_10'
+        %th= t '.best_time_21'
+        %th= t '.best_time_42'
+        %th= t '.best_time_100'
+%h3= t '.graph'
+%h3= t '.practices_list'
+.table-responsive
+  %table.table.table-striped.table-borderd.table-hover
+    %thead
+      %tr
+        %th= t '.day'
+        %th= t '.distance'
+        %th= t '.time'
+        %th= t '.heart_rate'
+%h3= t '.competition_result_list'
+.table-responsive
+  %table.table.table-striped.table-borderd.table-hover
+    %thead
+      %tr
+        %th= t '.competition_day'
+        %th= t '.competition_name'
+        %th= t '.competition_place'
+        %th= t '.distance'
+        %th= t '.time'
+        %th= t '.competition_point'
+%h3= t '.competition_map'
+%h5= t '.competition_map_caution'
