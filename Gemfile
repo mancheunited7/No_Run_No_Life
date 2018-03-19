@@ -64,5 +64,6 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-instagram'
 gem 'dotenv-rails'
+gem 'letter_opener_web', '~> 1.0'
 
 gem 'pry-rails'
