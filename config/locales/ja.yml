@@ -26,6 +26,7 @@ ja:
   mypages:
     index:
       title: "%{current_user}さんのマイページ"
+      run_level: ランレベル
       run_experience: ラン経験値
       best_time_list: ベストタイム一覧
       graph: グラフ
