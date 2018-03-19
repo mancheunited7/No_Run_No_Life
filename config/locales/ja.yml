@@ -20,9 +20,10 @@ ja:
       question_corner: 質問コーナー
       wanted_corner: 募集コーナー
       everyone_record: みんなの記録
-      welcome_to: ようこそAさん
+      welcome_to: "ようこそ%{name}さん"
       edit_account: アカウント編集
       logout: ログアウト
+      login: ログイン
   devise:
     passwords:
       new:
