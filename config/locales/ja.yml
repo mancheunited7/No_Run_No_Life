@@ -6,6 +6,9 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    attributes:
+      user:
+        name: ユーザー名
   shared:
     header:
       top: ホーム
@@ -25,17 +28,22 @@ ja:
       logout: ログアウト
       login: ログイン
   devise:
+    confirmations:
+      new:
+        title: 確認メール再送信
     passwords:
       new:
-        title: パスワード再設定
-        send_me_reset_password_instructions: パスワード再送信
+        title: パスワード再発行
     registrations:
       new:
         title: ユーザー登録
         characters_minimun: "%{minimum_password_length}文字以上"
       edit:
-        leave_blank_if_you_dont_want_to_change_it: 変更しない場合は空白のまま
-        we_need_your_current_password_to_confirm_your_changes: 現在のパスワードを入力
+        title: ユーザー情報編集
+        characters_minimun: "変更する場合は%{minimum_password_length}文字以上"
+        leave_blank_if_you_dont_want_to_change_it: 変更しない場合は空白のままにしてください。
+        update: ユーザー情報更新
+        back: 戻る
     sessions:
       new:
         title: ログイン
