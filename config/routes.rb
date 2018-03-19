@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'mypages/index'
-
   root 'top#index'
-
+  resources :mypages, only:[:index]
 end
