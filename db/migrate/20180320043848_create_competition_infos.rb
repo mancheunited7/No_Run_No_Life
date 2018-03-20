@@ -5,7 +5,7 @@ class CreateCompetitionInfos < ActiveRecord::Migration[5.1]
       t.string :competition_name, null: false, default: ""
       t.string :competition_place, null: false, default: ""
       t.string :competition_site, default: ""
-      t.integer :competition_classification
+      t.integer :competition_class
 
       t.timestamps
     end

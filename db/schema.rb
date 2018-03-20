@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180320043848) do
     t.string "competition_name", default: "", null: false
     t.string "competition_place", default: "", null: false
     t.string "competition_site", default: ""
-    t.integer "competition_classification"
+    t.integer "competition_class"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
