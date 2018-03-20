@@ -1,0 +1,2 @@
+class CompetitionInfo < ApplicationRecord
+end
