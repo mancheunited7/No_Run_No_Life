@@ -1,10 +1,10 @@
 %h2= t '.title'
 = form_with(model: @competition_info) do |f|
   .field
-    = f.radio_button :competition_classification, 1
+    = f.radio_button :competition_class, 1
     = f.label :competition_classification, "#{t '.road'}", value: 1
   .field
-    = f.radio_button :competition_classification, 2
+    = f.radio_button :competition_class, 2
     = f.label :competition_classification, "#{t '.trail'}", value: 2
   .button-field
     = f.submit "#{t '.title'}", class: "btn btn-primary"
