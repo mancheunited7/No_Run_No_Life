@@ -3,6 +3,8 @@ class CompetitionInfosController < ApplicationController
   require 'date'
 
   def index
+    @q = CompetitionInfo.ransack(params[:q])
+    @search = @q.result
     @competition_infos = CompetitionInfo.page(params[:page])
   end
 

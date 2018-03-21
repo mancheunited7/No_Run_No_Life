@@ -62,3 +62,4 @@ gem 'erb2haml'
 gem 'nokogiri'
 
 gem 'kaminari'
+gem 'ransack'
