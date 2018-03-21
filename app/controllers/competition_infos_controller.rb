@@ -3,7 +3,7 @@ class CompetitionInfosController < ApplicationController
   require 'date'
 
   def index
-    @competition_infos = CompetitionInfo.all
+    @competition_infos = CompetitionInfo.page(params[:page])
   end
 
   def new
