@@ -4,8 +4,13 @@ class CompetitionInfosController < ApplicationController
 
   def index
     @q = CompetitionInfo.ransack(params[:q])
-    @search = @q.result
-    @competition_infos = CompetitionInfo.page(params[:page])
+    @competition_infos = @q.result.page(params[:page])
+  end
+
+  def search
+    @q = CompetitionInfo.search(search_params)
+    @competition_infos = @q.result.page(params[:page])
+    render 'index'
   end
 
   def new
@@ -101,4 +106,8 @@ private
 
 def competition_info_params
   params.require(:competition_info).permit(:competition_class)
+end
+
+def search_params
+  params.require(:q).permit(:competition_day_gteq, :competition_day_lteq, :competition_name_cont, :competition_place_cont)
 end

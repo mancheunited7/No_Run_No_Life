@@ -1,6 +1,6 @@
 %h2= t '.title'
 
-= search_form_for @q do |f|
+= search_form_for(@q, url: competition_infos_search_path) do |f|
   .field
     = f.label :competition_day, "#{t '.competition_day'}"
     = f.date_select :competition_day_gteq
