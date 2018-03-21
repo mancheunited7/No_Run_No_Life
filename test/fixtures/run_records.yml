@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  run_class: 1
+  run_record_day: 2018-03-21
+  run_distance: 9.99
+  run_hour: 1
+
+two:
+  user: two
+  run_class: 1
+  run_record_day: 2018-03-21
+  run_distance: 9.99
+  run_hour: 1
