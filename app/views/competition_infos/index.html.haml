@@ -28,5 +28,5 @@
           %td= info.competition_day
           %td= info.competition_name
           %td= info.competition_place
-          %td= info.competition_site
+          %td= link_to info.competition_site, "#{info.competition_site}", target: "_blank"
 = paginate @competition_infos
