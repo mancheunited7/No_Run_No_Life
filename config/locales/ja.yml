@@ -47,6 +47,11 @@ ja:
       competition_point: 大会の評価
       competition_map: ここ走ったよ〜
       competition_map_caution: （マーカーをクリックすると、大会名が表示されるよ）
+  competition_infos:
+    new:
+      title: 大会情報取得
+      road: ロード
+      trail: トレイル
   date:
     abbr_day_names:
     - 日
