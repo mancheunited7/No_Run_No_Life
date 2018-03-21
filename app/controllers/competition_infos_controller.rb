@@ -38,7 +38,11 @@ class CompetitionInfosController < ApplicationController
             str_competition_day = competition_day[0].to_s + '年' + competition_day[1].to_s + '月' +  competition_day[2].to_s + '日'
             @competition_info.competition_day = Date.strptime(str_competition_day,'%Y年%m月%d日')
             @competition_info.competition_place = info.css('td')[2].text
-            @competition_info.save
+            unless CompetitionInfo.exists?(competition_day: @competition_info.competition_day, competition_name: @competition_info.competition_name)
+              unless @competition_info.save
+                render 'new'
+              end
+            end
           end
         end
       end
@@ -73,6 +77,12 @@ class CompetitionInfosController < ApplicationController
             @competition_info.competition_place = info.css('td')[2].text
             competition_site = info.at('a')
             @competition_info.competition_site = 'https://www.mtsn.jp/' + competition_site['href']
+            ## 重複登録回避
+            unless CompetitionInfo.exists?(competition_day: @competition_info.competition_day, competition_name: @competition_info.competition_name)
+              unless @competition_info.save
+                render 'new'
+              end
+            end
           end
         end
       end ## トレイル区分終了
