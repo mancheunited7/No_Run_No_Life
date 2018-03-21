@@ -2,6 +2,10 @@ class CompetitionInfosController < ApplicationController
   require 'open-uri'
   require 'date'
 
+  def index
+    @competition_infos = CompetitionInfo.all
+  end
+
   def new
     @competition_info = CompetitionInfo.new
   end
@@ -43,9 +47,9 @@ class CompetitionInfosController < ApplicationController
                 render 'new'
               end
             end
-          end
-        end
-      end
+          end ## 登録終了
+        end ## テーブル情報２種類取得終了
+      end ## 12ヶ月ループ終了
     #トレイルの大会情報取得
     else
       now = Date.today
@@ -87,6 +91,7 @@ class CompetitionInfosController < ApplicationController
         end
       end ## トレイル区分終了
     end ## ロード・トレイル区分終了
+    redirect_to competition_infos_path, notice: t('flash.competition_info.create')
   end ## create終了
 end
 
