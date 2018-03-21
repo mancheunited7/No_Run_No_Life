@@ -54,10 +54,16 @@ ja:
       competition_name: 大会名
       competition_place: 開催場所
       competition_site: 大会サイト
+      lets_search: 検索しよう
     new:
       title: 大会情報取得
       road: ロード
       trail: トレイル
+    competition_infos_list:
+      competition_day: 開催日
+      competition_name: 大会名
+      competition_place: 開催場所
+      competition_site: 大会サイト
   flash:
     competition_info:
       create: 大会情報を更新しました。
