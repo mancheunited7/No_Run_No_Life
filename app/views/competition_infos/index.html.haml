@@ -1,6 +1,6 @@
 %h2= t '.title'
 
-= search_form_for(@q, url: competition_infos_search_path) do |f|
+= search_form_for(@q, url: search_competition_infos_path, remote: true) do |f|
   .field
     = f.label :competition_day, "#{t '.competition_day'}"
     = f.date_select :competition_day_gteq
@@ -15,18 +15,5 @@
   .button-field
     = f.submit '検索しよう', class: 'btn btn-primary btn-block'
 
-.table-responsive
-  %table.table.table-striped.table-borderd.table-hover
-    %thead
-      %tr
-        %th= t '.competition_day'
-        %th= t '.competition_name'
-        %th= t '.competition_place'
-        %th= t '.competition_site'
-      - @competition_infos.each do |info|
-        %tr
-          %td= info.competition_day
-          %td= info.competition_name
-          %td= info.competition_place
-          %td= link_to info.competition_site, "#{info.competition_site}", target: "_blank"
-= paginate @competition_infos
+#competition_infos_list
+  = render partial: 'competition_infos_list', locals: {competition_infos: @competition_infos}
