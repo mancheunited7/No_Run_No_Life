@@ -59,4 +59,15 @@ gem 'jquery-rails'
 gem 'haml-rails'
 gem 'erb2haml'
 
+
+gem 'devise'
+gem 'devise-bootstrap-views'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-instagram'
+gem 'omniauth-yahoo-oauth2'
+
 gem 'nokogiri'
+
