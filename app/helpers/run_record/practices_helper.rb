@@ -1,0 +1,2 @@
+module RunRecord::PracticesHelper
+end

@@ -1,0 +1,43 @@
+.col-sm-6
+  = form_with(model: @practice, url: run_record_practices_path) do |f|
+    .field
+      %h4= f.label :"#{t '.run_day'}"
+      = raw sprintf(f.date_select(:run_record_day,
+        {start_year: Time.now.year - 1, end_year: Time.now.year,
+        order: [ :year, :month, :day ], use_month_numbers: true, date_separator: '%s'},
+        {class: "form-control"}), '年 ', '月 ') + '日'
+    .field
+      %h4= f.label :"#{t '.weather_conditions'}"
+      %h5= f.label :"#{t '.weather'}"
+      = f.text_field :day_weather, class: "form-control"
+      %h5= f.label :"#{t '.temperature'}"
+      = f.text_field :day_temperature, placeholder: "℃", step: "0.1", class: "form-control"
+    .field
+      %h5= f.label :"#{t '.humidity'}"
+      = f.text_field :day_humidity, placeholder: "%", step: "0.1", class: "form-control"
+      %h5= f.label :"#{t '.wind_speed'}"
+      = f.text_field :day_wind_speed, placeholder: "m/s", step: "0.1", class: "form-control"
+    .field
+      %h4= f.label :"#{t '.run_distance'}"
+      %h5= "#{t ".distance_caution"}"
+      = f.number_field :run_distance, placeholder: "km", step: "0.0001", class: "form-control",min:0
+    .field
+      %h4= f.label :"#{t '.run_time'}"
+      = f.number_field :run_hour, class: "form-control", min:0
+      時間
+      \#{f.number_field :run_minute, class: "form-control", min: 0 ,max: 60}分
+      \#{f.number_field :run_second, class: "form-control", min: 0 ,max: 60}秒
+    .field
+      %h4= f.label :"#{t '.heart_rate'}"
+      = f.number_field :day_heart_rate, class: "form-control"
+    .field
+      %h4= f.label :"#{t '.weight'}"
+      = f.number_field :day_weight, placeholder: "kg", step: "0.1", class: "form-control"
+    .field
+      %h4= f.label :"#{t '.body_fat'}"
+      = f.number_field :day_body_fat, placeholder: "%", step: "0.1", class: "form-control"
+    .field
+      %h4= f.label :"#{t '.run_content'}"
+      = f.text_area :run_content, rows: "5" , class: "form-control"
+    .button-field
+      = f.submit "#{t '.record'}", class: "btn btn-primary btn-block"
