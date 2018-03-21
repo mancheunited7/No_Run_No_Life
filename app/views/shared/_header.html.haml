@@ -14,7 +14,7 @@
         %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{t '.competition_info_corner'}
         .dropdown-menu
           = link_to "#{t '.get_competition_info'}", new_competition_info_path,  class: "dropdown-item"
-          = link_to "#{t '.search_competition'}", '',  class: "dropdown-item"
+          = link_to "#{t '.search_competition'}", competition_infos_path,  class: "dropdown-item"
       %li.nav-item.dropdown
         %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{t '.question_wanted_corner'}
         .dropdown-menu
