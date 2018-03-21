@@ -5,7 +5,7 @@
     = f.label :competition_day, "#{t '.competition_day'}"
     = f.date_select :competition_day_gteq
     = '~'
-    = f.date_select :competition_day_lteq
+    = f.date_select :competition_day_lteq, include_blank: true
   .field
     = f.label :comeptition_name, "#{t '.competition_name'}"
     = f.text_field :competition_name_cont, class: "form-control"
