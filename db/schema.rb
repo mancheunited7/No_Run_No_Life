@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312163116) do
+ActiveRecord::Schema.define(version: 20180320043848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,6 +40,16 @@ ActiveRecord::Schema.define(version: 20180312163116) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["userid", "provider"], name: "index_users_on_userid_and_provider", unique: true
+  end
+  
+  create_table "competition_infos", force: :cascade do |t|
+    t.date "competition_day", null: false
+    t.string "competition_name", default: "", null: false
+    t.string "competition_place", default: "", null: false
+    t.string "competition_site", default: ""
+    t.integer "competition_class"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
