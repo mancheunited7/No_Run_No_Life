@@ -1,17 +1,19 @@
 %h2= t '.title'
 
-.table-responsive
-  %table.table.table-striped.table-borderd.table-hover
-    %thead
-      %tr
-        %th= t '.competition_day'
-        %th= t '.competition_name'
-        %th= t '.competition_place'
-        %th= t '.competition_site'
-      - @competition_infos.each do |info|
-        %tr
-          %td= info.competition_day
-          %td= info.competition_name
-          %td= info.competition_place
-          %td= info.competition_site
-= paginate @competition_infos
+= search_form_for(@q, url: search_competition_infos_path, remote: true) do |f|
+  .field
+    = f.label :competition_day, "#{t '.competition_day'}"
+    = f.date_select :competition_day_gteq
+    = '~'
+    = f.date_select :competition_day_lteq, include_blank: true
+  .field
+    = f.label :comeptition_name, "#{t '.competition_name'}"
+    = f.text_field :competition_name_cont, class: "form-control"
+  .field
+    = f.label :competition_place, "#{t '.competition_place'}"
+    = f.text_field :competition_place_cont, class: "form-control"
+  .button-field
+    = f.submit "#{t '.lets_search'}", class: 'btn btn-primary btn-block'
+
+#competition_infos_list
+  = render partial: 'competition_infos_list', locals: {competition_infos: @competition_infos}

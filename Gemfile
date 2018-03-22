@@ -75,4 +75,4 @@ gem 'nokogiri'
 
 
 gem 'kaminari'
-
+gem 'ransack'
