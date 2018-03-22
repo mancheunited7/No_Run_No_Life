@@ -1,2 +1,0 @@
-module CompetitionResult::RunRecordsHelper
-end

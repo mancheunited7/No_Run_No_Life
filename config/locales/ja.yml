@@ -99,10 +99,10 @@ ja:
     run_records:
       new:
         title: 大会記録を保存しよう
-  run_record:
-    practices:
+  practice:
+    run_records:
       new:
-        title: 練習の記録
+        title: 練習の記録を保存しよう
   date:
     abbr_day_names:
     - 日
