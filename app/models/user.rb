@@ -3,6 +3,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable,
          :validatable, :confirmable, :omniauthable
 
+  has_many :run_records, dependent: :destroy
+
+
   def self.find_userinfo(auth)
     user = User.find_by(provider: auth.provider, userid: auth.uid)
 
@@ -23,4 +26,5 @@ class User < ApplicationRecord
   def self.create_uuid
     SecureRandom.uuid
   end
+
 end

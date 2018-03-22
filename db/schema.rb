@@ -10,11 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320043848) do
+ActiveRecord::Schema.define(version: 20180321134241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "body_states", force: :cascade do |t|
+    t.bigint "run_record_id"
+    t.integer "heart_rate"
+    t.decimal "day_weight"
+    t.decimal "day_body_fat"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["run_record_id"], name: "index_body_states_on_run_record_id"
+  end
+
+  create_table "competition_evaluations", force: :cascade do |t|
+    t.bigint "run_record_id"
+    t.integer "competition_point", default: 0, null: false
+    t.text "competition_evaluation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["run_record_id"], name: "index_competition_evaluations_on_run_record_id"
+  end
+
+  create_table "competition_infos", force: :cascade do |t|
+    t.date "competition_day", null: false
+    t.string "competition_name", default: "", null: false
+    t.string "competition_place", default: "", null: false
+    t.string "competition_site", default: ""
+    t.integer "competition_class"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "run_records", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "run_class", null: false
+    t.date "run_record_day", null: false
+    t.decimal "run_distance", null: false
+    t.integer "run_hour"
+    t.integer "run_minute", null: false
+    t.integer "run_second", null: false
+    t.integer "run_calc_time", null: false
+    t.text "run_content", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_run_records_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -46,15 +89,20 @@ ActiveRecord::Schema.define(version: 20180320043848) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["userid", "provider"], name: "index_users_on_userid_and_provider", unique: true
   end
-  
-  create_table "competition_infos", force: :cascade do |t|
-    t.date "competition_day", null: false
-    t.string "competition_name", default: "", null: false
-    t.string "competition_place", default: "", null: false
-    t.string "competition_site", default: ""
-    t.integer "competition_class"
+
+  create_table "weather_conditions", force: :cascade do |t|
+    t.bigint "run_record_id"
+    t.string "day_weather"
+    t.decimal "day_temperature"
+    t.decimal "day_humidity"
+    t.decimal "day_wind_speed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["run_record_id"], name: "index_weather_conditions_on_run_record_id"
   end
 
+  add_foreign_key "body_states", "run_records"
+  add_foreign_key "competition_evaluations", "run_records"
+  add_foreign_key "run_records", "users"
+  add_foreign_key "weather_conditions", "run_records"
 end

@@ -26,6 +26,23 @@ ja:
       welcome_to: "ようこそ%{name}さん"
       edit_account: アカウント編集
       logout: ログアウト
+    run_record:
+      run_day: 走った日を入力しよう
+      weather_conditions: 気象条件を入力しよう
+      weather: 天気
+      temperature: 気温
+      humidity: 湿度
+      wind_speed: 風速
+      run_distance: 走った距離を入力しよう
+      distance_caution: （ハーフは21.0975km、フルは42.195kmで入力）
+      run_time: タイムを入力しよう
+      heart_rate: 心拍数を入力しよう
+      weight: 体重を入力しよう
+      body_fat: 体脂肪率を入力しよう
+      run_content: 今日のランを振り返ろう
+      competition_point: 大会を評価しよう
+      competition_evaluation: 大会についてコメントしよう
+      record: 記録する
       login: ログイン
   devise:
     confirmations:
@@ -94,6 +111,14 @@ ja:
       title: 大会情報取得
       road: ロード
       trail: トレイル
+  competition_result:
+    run_records:
+      new:
+        title: 大会記録を保存しよう
+  practice:
+    run_records:
+      new:
+        title: 練習の記録を保存しよう
     competition_infos_list:
       competition_day: 開催日
       competition_name: 大会名
