@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   resources :mypages, only:[:index]
   resources :competition_infos, only:[:new, :create]
   namespace :competition_result do
-    resources :run_records, only:[:new, :create]
+    resources :run_records
   end
   namespace :practice do
-    resources :run_records, only:[:new, :create]
+    resources :run_records
   end
   devise_for :users, controllers:{
     registrations: "users/registrations",
