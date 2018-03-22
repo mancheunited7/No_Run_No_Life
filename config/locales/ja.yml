@@ -128,6 +128,8 @@ ja:
   flash:
     competition_info:
       create: 大会情報を更新しました。
+    practice:
+      create: 練習記録を登録しました。
   views:
     pagination:
       first: "&laquo; 最初"
