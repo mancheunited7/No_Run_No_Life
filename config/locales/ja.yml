@@ -26,6 +26,7 @@ ja:
       welcome_to: "ようこそ%{name}さん"
       edit_account: アカウント編集
       logout: ログアウト
+      login: ログイン
     run_record:
       run_day: 走った日を入力しよう
       weather_conditions: 気象条件を入力しよう
@@ -127,6 +128,8 @@ ja:
   flash:
     competition_info:
       create: 大会情報を更新しました。
+    practice:
+      create: 練習記録を登録しました。
   views:
     pagination:
       first: "&laquo; 最初"
