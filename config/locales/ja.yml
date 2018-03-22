@@ -37,6 +37,8 @@ ja:
       weight: 体重を入力しよう
       body_fat: 体脂肪率を入力しよう
       run_content: 今日のランを振り返ろう
+      competition_point: 大会を評価しよう
+      competition_evaluation: 大会についてコメントしよう
       record: 記録する
   devise:
     passwords:
@@ -93,6 +95,10 @@ ja:
       title: 大会情報取得
       road: ロード
       trail: トレイル
+  competition_result:
+    run_records:
+      new:
+        title: 大会記録を保存しよう
   run_record:
     practices:
       new:

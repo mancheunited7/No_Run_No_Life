@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   namespace :run_record do
     resources :practices, only:[:new, :create]
   end
+  namespace :competition_result do
+    resources :run_records, only:[:new, :create]
+  end
 end

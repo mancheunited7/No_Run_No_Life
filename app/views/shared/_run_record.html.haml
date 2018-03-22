@@ -1,5 +1,5 @@
 .col-sm-6
-  = form_with(model: @practice, url: run_record_practices_path) do |f|
+  = form_with(model: object, url: path) do |f|
     .field
       %h4= f.label :"#{t '.run_day'}"
       = raw sprintf(f.date_select(:run_record_day,
@@ -39,5 +39,12 @@
     .field
       %h4= f.label :"#{t '.run_content'}"
       = f.text_area :run_content, rows: "5" , class: "form-control"
+      - if controller.controller_path == "competition_result/run_records"
+        .field
+          %h4= f.label :"#{t '.competition_point'}"
+          = f.number_field :competition_point, class: "form-control", placeholder: "点数", min: 0, max: 100
+        .field
+          %h4= f.label :"#{t '.competition_evaluation'}"
+          = f.text_area :competition_evaluation, rows: "3", class: "form-control"
     .button-field
       = f.submit "#{t '.record'}", class: "btn btn-primary btn-block"
