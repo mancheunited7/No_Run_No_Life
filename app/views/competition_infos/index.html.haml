@@ -1,2 +1,19 @@
-%h1 CompetitionInfo#index
-%p Find me in app/views/competition_info/index.html.haml
+%h2= t '.title'
+
+= search_form_for(@q, url: search_competition_infos_path, remote: true) do |f|
+  .field
+    = f.label :competition_day, "#{t '.competition_day'}"
+    = f.date_select :competition_day_gteq
+    = '~'
+    = f.date_select :competition_day_lteq, include_blank: true
+  .field
+    = f.label :comeptition_name, "#{t '.competition_name'}"
+    = f.text_field :competition_name_cont, class: "form-control"
+  .field
+    = f.label :competition_place, "#{t '.competition_place'}"
+    = f.text_field :competition_place_cont, class: "form-control"
+  .button-field
+    = f.submit "#{t '.lets_search'}", class: 'btn btn-primary btn-block'
+
+#competition_infos_list
+  = render partial: 'competition_infos_list', locals: {competition_infos: @competition_infos}

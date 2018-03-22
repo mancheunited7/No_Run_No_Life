@@ -13,8 +13,8 @@
       %li.nav-item.dropdown
         %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{t '.competition_info_corner'}
         .dropdown-menu
-          = link_to "#{t '.get_competition_info'}", '',  class: "dropdown-item"
-          = link_to "#{t '.search_competition'}", '',  class: "dropdown-item"
+          = link_to "#{t '.get_competition_info'}", new_competition_info_path,  class: "dropdown-item"
+          = link_to "#{t '.search_competition'}", competition_infos_path,  class: "dropdown-item"
       %li.nav-item.dropdown
         %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{t '.question_wanted_corner'}
         .dropdown-menu
@@ -23,8 +23,12 @@
       %li.nav-item
         %a.nav-link #{t '.everyone_record'}
     %ul.navbar-nav.ml-auto
-      %li.nav-item.dropdown
-        %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{t '.welcome_to'}
-        .dropdown-menu
-          = link_to "#{t '.edit_account'}", '',  class: "dropdown-item"
-          = link_to "#{t '.logout'}", '',  class: "dropdown-item"
+      - if user_signed_in?
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{t('.welcome_to', name: current_user.name)}
+          .dropdown-menu
+            = link_to "#{t '.edit_account'}", edit_user_registration_path,  class: "dropdown-item"
+            = link_to "#{t '.logout'}", destroy_user_session_path, method: :delete, class: "dropdown-item"
+      - else
+        %li.nav-item
+          = link_to "#{t '.login'}", new_user_session_path

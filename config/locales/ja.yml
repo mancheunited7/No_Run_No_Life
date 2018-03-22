@@ -6,6 +6,9 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    attributes:
+      user:
+        name: ユーザー名
   shared:
     header:
       top: ホーム
@@ -20,7 +23,7 @@ ja:
       question_corner: 質問コーナー
       wanted_corner: 募集コーナー
       everyone_record: みんなの記録
-      welcome_to: ようこそAさん
+      welcome_to: "ようこそ%{name}さん"
       edit_account: アカウント編集
       logout: ログアウト
     run_record:
@@ -40,18 +43,24 @@ ja:
       competition_point: 大会を評価しよう
       competition_evaluation: 大会についてコメントしよう
       record: 記録する
+      login: ログイン
   devise:
+    confirmations:
+      new:
+        title: 確認メール再送信
     passwords:
       new:
-        title: パスワード再設定
-        send_me_reset_password_instructions: パスワード再送信
+        title: パスワード再発行
     registrations:
       new:
         title: ユーザー登録
         characters_minimun: "%{minimum_password_length}文字以上"
       edit:
-        leave_blank_if_you_dont_want_to_change_it: 変更しない場合は空白のまま
-        we_need_your_current_password_to_confirm_your_changes: 現在のパスワードを入力
+        title: ユーザー情報編集
+        characters_minimun: "変更する場合は%{minimum_password_length}文字以上"
+        leave_blank_if_you_dont_want_to_change_it: 変更しない場合は空白のままにしてください。
+        update: ユーザー情報更新
+        back: 戻る
     sessions:
       new:
         title: ログイン
@@ -91,6 +100,13 @@ ja:
       competition_map: ここ走ったよ〜
       competition_map_caution: （マーカーをクリックすると、大会名が表示されるよ）
   competition_infos:
+    index:
+      title: 大会情報一覧
+      competition_day: 開催日
+      competition_name: 大会名
+      competition_place: 開催場所
+      competition_site: 大会サイト
+      lets_search: 検索しよう
     new:
       title: 大会情報取得
       road: ロード
@@ -103,6 +119,21 @@ ja:
     run_records:
       new:
         title: 練習の記録を保存しよう
+    competition_infos_list:
+      competition_day: 開催日
+      competition_name: 大会名
+      competition_place: 開催場所
+      competition_site: 大会サイト
+  flash:
+    competition_info:
+      create: 大会情報を更新しました。
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "&hellip;"
   date:
     abbr_day_names:
     - 日
