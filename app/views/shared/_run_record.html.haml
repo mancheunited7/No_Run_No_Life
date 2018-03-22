@@ -42,11 +42,12 @@
       %h4= f.label :"#{t '.run_content'}"
       = f.text_area :run_content, rows: "5" , class: "form-control"
       - if controller.controller_path == "competition_result/run_records"
-        .field
-          %h4= f.label :"#{t '.competition_point'}"
-          = f.number_field :competition_point, class: "form-control", placeholder: "点数", min: 0, max: 100
-        .field
-          %h4= f.label :"#{t '.competition_evaluation'}"
-          = f.text_area :competition_evaluation, rows: "3", class: "form-control"
+        = f.fields_for :competition_evaluation do |eva_fields|
+          .field
+            %h4= f.label :"#{t '.competition_point'}"
+            = eva_fields.number_field :competition_point, class: "form-control", placeholder: "点数", min: 0, max: 100
+          .field
+            %h4= f.label :"#{t '.competition_evaluation'}"
+            = eva_fields.text_area :competition_evaluation, rows: "3", class: "form-control"
     .button-field
       = f.submit "#{t '.record'}", class: "btn btn-primary btn-block"

@@ -130,6 +130,8 @@ ja:
       create: 大会情報を更新しました。
     practice:
       create: 練習記録を登録しました。
+    comp_result:
+      create: 大会記録を登録しました。
   views:
     pagination:
       first: "&laquo; 最初"
