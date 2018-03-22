@@ -283,6 +283,7 @@ DEPENDENCIES
   omniauth
   omniauth-instagram
   omniauth-twitter
+  nokogiri
   pg (~> 0.18)
   pry-rails
   puma (~> 3.7)

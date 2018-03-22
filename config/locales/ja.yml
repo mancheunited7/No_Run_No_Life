@@ -58,6 +58,35 @@ ja:
         google_login: Googleログイン
         instagram_login: instagramログイン
         yahoo_login: yahooログイン
+  mypages:
+    index:
+      title: "%{current_user}さんのマイページ"
+      run_level: ランレベル
+      run_experience: ラン経験値
+      best_time_list: ベストタイム一覧
+      graph: グラフ
+      best_time_5: 5キロ
+      best_time_10: 10キロ
+      best_time_21: ハーフ
+      best_time_42: フル
+      best_time_100: 100キロ
+      practices_list: 練習記録一覧
+      day: 練習日
+      distance: 走った距離
+      time: タイム
+      heart_rate: 心拍数
+      competition_result_list: 大会記録一覧
+      competition_day: 開催日
+      competition_name: 大会名
+      competition_place: 開催場所
+      competition_point: 大会の評価
+      competition_map: ここ走ったよ〜
+      competition_map_caution: （マーカーをクリックすると、大会名が表示されるよ）
+  competition_infos:
+    new:
+      title: 大会情報取得
+      road: ロード
+      trail: トレイル
   date:
     abbr_day_names:
     - 日

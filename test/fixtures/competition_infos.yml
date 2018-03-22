@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  competition_day: 2018-03-20
+  competition_name: MyString
+  competition_place: MyString
+  competition_site: MyString
+  competition_classification: 1
+
+two:
+  competition_day: 2018-03-20
+  competition_name: MyString
+  competition_place: MyString
+  competition_site: MyString
+  competition_classification: 1
