@@ -73,3 +73,6 @@ gem 'omniauth-yahoo-oauth2'
 
 gem 'nokogiri'
 
+
+gem 'kaminari'
+

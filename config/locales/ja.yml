@@ -83,10 +83,26 @@ ja:
       competition_map: ここ走ったよ〜
       competition_map_caution: （マーカーをクリックすると、大会名が表示されるよ）
   competition_infos:
+    index:
+      title: 大会情報一覧
+      competition_day: 開催日
+      competition_name: 大会名
+      competition_place: 開催場所
+      competition_site: 大会サイト
     new:
       title: 大会情報取得
       road: ロード
       trail: トレイル
+  flash:
+    competition_info:
+      create: 大会情報を更新しました。
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "&hellip;"
   date:
     abbr_day_names:
     - 日
