@@ -21,6 +21,12 @@
         %th= t '.distance'
         %th= t '.time'
         %th= t '.heart_rate'
+      - @practices.each do |practice|
+        %tr
+          %td= practice.run_record_day
+          %td= run_distance(practice)
+          %td= run_time(practice)
+          %td= practice.body_state.heart_rate
 %h3= t '.competition_result_list'
 .table-responsive
   %table.table.table-striped.table-borderd.table-hover
@@ -32,5 +38,13 @@
         %th= t '.distance'
         %th= t '.time'
         %th= t '.competition_point'
+      - @comp_results.each do |comp_result|
+        %tr
+          %td= comp_result.run_record_day
+          %td= ""
+          %td= ""
+          %td= run_distance(comp_result)
+          %td= run_time(comp_result)
+          %td= comp_point(comp_result.competition_evaluation)
 %h3= t '.competition_map'
 %h5= t '.competition_map_caution'
