@@ -59,6 +59,20 @@ gem 'jquery-rails'
 gem 'haml-rails'
 gem 'erb2haml'
 
+
+gem 'devise'
+gem 'devise-bootstrap-views'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-instagram'
+gem 'dotenv-rails'
+gem 'letter_opener_web', '~> 1.0'
+
+gem 'pry-rails'
+gem 'omniauth-yahoo-oauth2'
+
 gem 'nokogiri'
 
+
 gem 'kaminari'
+
