@@ -3,7 +3,7 @@
 %h3= t('.run_experience')
 %h3= t '.best_time_list'
 .table-responsive
-  %table.table.table-striped.table-borderd.table-hover
+  %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
         %th= t '.best_time_5'
@@ -14,13 +14,17 @@
 %h3= t '.graph'
 %h3= t '.practices_list'
 .table-responsive
-  %table.table.table-striped.table-borderd.table-hover
+  %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
         %th= t '.day'
         %th= t '.distance'
         %th= t '.time'
         %th= t '.heart_rate'
+        %th= t '.show'
+        %th= t '.edit'
+        %th= t '.destroy'
+    %tbody
       - @practices.each do |practice|
         %tr
           %td= practice.run_record_day
@@ -32,7 +36,7 @@
           %td= link_to "#{t '.destroy'}", practice_run_record_path(practice), method: :delete, class: "btn btn-primary"
 %h3= t '.competition_result_list'
 .table-responsive
-  %table.table.table-striped.table-borderd.table-hover
+  %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
         %th= t '.competition_day'
@@ -41,6 +45,10 @@
         %th= t '.distance'
         %th= t '.time'
         %th= t '.competition_point'
+        %th= t '.show'
+        %th= t '.edit'
+        %th= t '.destroy'
+    %tbody
       - @comp_results.each do |comp_result|
         %tr
           %td= comp_result.run_record_day

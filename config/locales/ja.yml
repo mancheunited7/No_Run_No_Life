@@ -44,7 +44,6 @@ ja:
       competition_point: 大会を評価しよう
       competition_evaluation: 大会についてコメントしよう
       record: 記録する
-      login: ログイン
   devise:
     confirmations:
       new:
@@ -72,10 +71,7 @@ ja:
         Forgot_your_password: パスワードを忘れたときはこちら
         Didnt_receive_confirmation_instructions: 確認メール再送信
         twitter_login: Twiterログイン
-        facebook_login: Facebookログイン
-        google_login: Googleログイン
         instagram_login: instagramログイン
-        yahoo_login: yahooログイン
   mypages:
     index:
       title: "%{current_user}さんのマイページ"
@@ -123,6 +119,22 @@ ja:
     run_records:
       new:
         title: 練習の記録を保存しよう
+      edit:
+        title: 練習記録を編集しよう
+      show:
+        title: 練習記録詳細
+        run_day: 走った日
+        weather: 天気
+        temperature: 気温
+        humidity: 湿度
+        wind_speed: 風速
+        run_distance: 走った距離
+        run_time: タイム
+        heart_rate: 心拍数
+        weight: 体重
+        body_fat: 体脂肪率
+        run_content: 今日のランについて
+        back_to_mypage: マイページへ戻る
     competition_infos_list:
       competition_day: 開催日
       competition_name: 大会名
@@ -133,6 +145,8 @@ ja:
       create: 大会情報を更新しました。
     practice:
       create: 練習記録を登録しました。
+      update: 練習記録を更新しました。
+      destroy: 練習記録を削除しました。
   views:
     pagination:
       first: "&laquo; 最初"

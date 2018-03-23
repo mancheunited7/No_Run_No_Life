@@ -10,4 +10,24 @@ module MypagesHelper
   def comp_point(result)
     result.competition_point.to_s.concat("点")
   end
+
+  def day_temperature(result)
+    result.weather_condition.day_temperature.to_s.concat("℃")
+  end
+
+  def day_humidity(result)
+    result.weather_condition.day_humidity.to_s.concat("%")
+  end
+
+  def day_wind_speed(result)
+    result.weather_condition.day_wind_speed.to_s.concat("m/s")
+  end
+
+  def day_weight(result)
+    result.body_state.day_weight.to_s.concat("kg")
+  end
+
+  def day_body_fat(result)
+    result.body_state.day_body_fat.to_s.concat("%")
+  end
 end
