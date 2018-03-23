@@ -8,7 +8,7 @@ class RunRecord < ApplicationRecord
    accepts_nested_attributes_for :weather_condition, allow_destroy: true
    accepts_nested_attributes_for :competition_evaluation, allow_destroy: true
    accepts_nested_attributes_for :body_state, allow_destroy: true
-   accepts_nested_attributes_for :competition_place, allow_destory: true
+   accepts_nested_attributes_for :competition_place, allow_destroy: true
 
    def self.calc_time(hour, minute, second)
      if hour.nil?
@@ -17,4 +17,5 @@ class RunRecord < ApplicationRecord
        hour*3600 + minute*60 + second
      end
    end
+
 end

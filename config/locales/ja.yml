@@ -30,6 +30,7 @@ ja:
     run_record:
       run_day: 走った日を入力しよう
       weather_conditions: 気象条件を入力しよう
+      competition_start_place: 大会のスタート地点を入力しよう
       weather: 天気
       temperature: 気温
       humidity: 湿度

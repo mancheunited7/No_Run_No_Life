@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20180323093415) do
 
   create_table "competition_places", force: :cascade do |t|
     t.bigint "run_record_id"
-    t.string "competition_start_place", default: "", null: false
     t.string "competition_place_address", default: "", null: false
     t.float "competition_place_latitude", null: false
     t.float "competition_place_longitude", null: false

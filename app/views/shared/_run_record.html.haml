@@ -6,6 +6,11 @@
         {start_year: Time.now.year - 1, end_year: Time.now.year,
         order: [ :year, :month, :day ], use_month_numbers: true, date_separator: '%s'},
         {class: "form-control"}), '年 ', '月 ') + '日'
+    - if controller.controller_path == "competition_result/run_records"
+      = f.fields_for :competition_place do |comp_place_fields|
+        .field
+          %h4= f.label :"#{t '.competition_start_place'}"
+          = comp_place_fields.text_field :competition_place_address, class: "form-control", placeholder:"[スタート地点 or 都道府県市区町]名を入力してください。"
     = f.fields_for :weather_condition do |weather_fields|
       .field
         %h4= f.label :"#{t '.weather_conditions'}"

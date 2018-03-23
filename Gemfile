@@ -73,6 +73,8 @@ gem 'omniauth-yahoo-oauth2'
 
 gem 'nokogiri'
 
-
 gem 'kaminari'
 gem 'ransack'
+
+gem 'gmaps4rails'
+gem 'geocoder'
