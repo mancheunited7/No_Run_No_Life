@@ -8,7 +8,7 @@ module MypagesHelper
   end
 
   def comp_point(result)
-    result.competition_point.to_s.concat("点")
+    result.competition_evaluation.competition_point.to_s.concat("点")
   end
 
   def day_temperature(result)
