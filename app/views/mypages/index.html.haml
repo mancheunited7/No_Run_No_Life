@@ -11,6 +11,10 @@
         %th= t '.best_time_21'
         %th= t '.best_time_42'
         %th= t '.best_time_100'
+    %tbody
+      %tr
+        - @best_time_list.each do |key, value|
+          %td= run_time(value)
 %h3= t '.graph'
 %h3= t '.practices_list'
 .table-responsive
