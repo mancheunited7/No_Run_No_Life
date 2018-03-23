@@ -7,9 +7,9 @@
       %li.nav-item.dropdown
         %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{t '.mypage'}
         .dropdown-menu
-          = link_to "#{t '.mypagetop'}", '',  class: "dropdown-item"
-          = link_to "#{t '.where_run'}", '',  class: "dropdown-item"
-          = link_to "#{t '.practice_record'}", '',  class: "dropdown-item"
+          = link_to "#{t '.mypagetop'}", mypages_path,  class: "dropdown-item"
+          = link_to "#{t '.where_run'}", new_competition_result_run_record_path,  class: "dropdown-item"
+          = link_to "#{t '.practice_record'}", new_practice_run_record_path,  class: "dropdown-item"
       %li.nav-item.dropdown
         %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{t '.competition_info_corner'}
         .dropdown-menu

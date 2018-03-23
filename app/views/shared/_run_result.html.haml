@@ -1,0 +1,44 @@
+.table-responsive
+  %table.table.table-striped.table-hover.table-bordered
+    %body
+      %tr
+        %td= t '.run_day'
+        %td= show_result.run_record_day
+      %tr
+        %td= t '.run_distance'
+        %td= run_distance(show_result)
+      %tr
+        %td= t '.run_time'
+        %td= run_time(show_result)
+      %tr
+        %td= t '.weather'
+        %td= show_result.weather_condition.day_weather
+      %tr
+        %td= t '.temperature'
+        %td= day_temperature(show_result)
+      %tr
+        %td= t '.humidity'
+        %td= day_humidity(show_result)
+      %tr
+        %td= t '.wind_speed'
+        %td= day_wind_speed(show_result)
+      %tr
+        %td= t '.heart_rate'
+        %td= show_result.body_state.heart_rate
+      %tr
+        %td= t '.weight'
+        %td= day_weight(show_result)
+      %tr
+        %td= t '.body_fat'
+        %td= day_body_fat(show_result)
+      %tr
+        %td= t '.run_content'
+        %td= show_result.run_content
+      - if controller.controller_path == "competition_result/run_records"
+        %tr
+          %td= t '.competition_point'
+          %td= comp_point(show_result)
+        %tr
+          %td= t '.competition_evaluation'
+          %td= show_result.competition_evaluation.competition_evaluation
+= link_to "#{t '.back_to_mypage'}", mypages_path, class: "btn btn-primary"

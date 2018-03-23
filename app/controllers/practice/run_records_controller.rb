@@ -1,4 +1,5 @@
 class Practice::RunRecordsController < ApplicationController
+  before_action :set_run_record, only:[:show, :edit, :update, :destroy]
   def new
     @practice = RunRecord.new
     @practice.build_weather_condition
@@ -16,10 +17,33 @@ class Practice::RunRecordsController < ApplicationController
       render :new
     end
   end
+
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @practice.update(practice_params)
+      redirect_to mypages_path, notice: t('flash.practice.update')
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @practice.destroy
+    redirect_to mypages_path, notice: t('flash.practice.destroy')
+  end
 end
 
 private
 
+def set_run_record
+  @practice = RunRecord.find(params[:id])
+end
+
 def practice_params
-  params.require(:run_record).permit(:run_record_day, :run_distance, :run_hour, :run_minute, :run_second, :run_content, weather_condition_attributes: [:day_weather, :day_temperature, :day_humidity, :day_wind_speed], body_state_attributes: [:heart_rate, :day_weight, :day_body_fat])
+  params.require(:run_record).permit(:run_record_day, :run_distance, :run_hour, :run_minute, :run_second, :run_content, weather_condition_attributes: [:id, :day_weather, :day_temperature, :day_humidity, :day_wind_speed], body_state_attributes: [:id, :heart_rate, :day_weight, :day_body_fat])
 end
