@@ -5,6 +5,7 @@ class CompetitionResult::RunRecordsController < ApplicationController
     @comp_result.build_weather_condition
     @comp_result.build_body_state
     @comp_result.build_competition_evaluation
+    @comp_result.build_competition_place
   end
 
   def create
@@ -49,5 +50,9 @@ def set_comp_result
 end
 
 def comp_result_params
-  params.require(:run_record).permit(:run_record_day, :run_distance, :run_hour, :run_minute, :run_second, :run_content, weather_condition_attributes: [:id, :day_weather, :day_temperature, :day_humidity, :day_wind_speed], body_state_attributes: [:id, :heart_rate, :day_weight, :day_body_fat], competition_evaluation_attributes: [:id, :competition_point, :competition_evaluation])
+  params.require(:run_record).permit(:user_id, :run_record_day, :run_distance, :run_hour, :run_minute, :run_second, :run_content,
+    weather_condition_attributes: [:id, :day_weather, :day_temperature, :day_humidity, :day_wind_speed],
+    body_state_attributes: [:id, :heart_rate, :day_weight, :day_body_fat],
+    competition_evaluation_attributes: [:id, :competition_point, :competition_evaluation],
+    competition_place_attributes: [:id, :competition_place_address, :competition_place_latitude, :competition_place_longitude])
 end

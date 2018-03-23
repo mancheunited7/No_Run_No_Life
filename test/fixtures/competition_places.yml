@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  run_record: one
+  competition_start_place: MyString
+  competition_place_address: MyString
+  competition_place_latitude: 1.5
+  competition_place_longitude: 1.5
+
+two:
+  run_record: two
+  competition_start_place: MyString
+  competition_place_address: MyString
+  competition_place_latitude: 1.5
+  competition_place_longitude: 1.5

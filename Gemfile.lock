@@ -89,8 +89,10 @@ GEM
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.23)
+    geocoder (1.4.4)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    gmaps4rails (2.1.2)
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
@@ -298,6 +300,8 @@ DEPENDENCIES
   devise-bootstrap-views
   dotenv-rails
   erb2haml
+  geocoder
+  gmaps4rails
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails

@@ -49,10 +49,10 @@
         %th= t '.edit'
         %th= t '.destroy'
     %tbody
-      - @comp_results.each do |comp_result|
+      - @comp_result_recent_five.each do |comp_result|
         %tr
           %td= comp_result.run_record_day
-          %td= ""
+          %td= comp_result.competition_place.competition_place_address
           %td= ""
           %td= run_distance(comp_result)
           %td= run_time(comp_result)
@@ -62,3 +62,15 @@
           %td= link_to "#{t '.destroy'}", competition_result_run_record_path(comp_result), method: :delete, class: "btn btn-primary"
 %h3= t '.competition_map'
 %h5= t '.competition_map_caution'
+- unless @comp_result_maps.empty?
+  %div(style="width: 100%;" )
+  #map(style="height: 500px;" )
+  :javascript
+    var mapdata = #{raw @comp_result_maps.to_json};
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers(mapdata);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      handler.getMap().setZoom(5);
+      });

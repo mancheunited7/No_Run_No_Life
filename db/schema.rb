@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321134241) do
+ActiveRecord::Schema.define(version: 20180323093415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(version: 20180321134241) do
     t.integer "competition_class"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "competition_places", force: :cascade do |t|
+    t.bigint "run_record_id"
+    t.string "competition_place_address", default: "", null: false
+    t.float "competition_place_latitude", null: false
+    t.float "competition_place_longitude", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["run_record_id"], name: "index_competition_places_on_run_record_id"
   end
 
   create_table "run_records", force: :cascade do |t|
@@ -103,6 +113,7 @@ ActiveRecord::Schema.define(version: 20180321134241) do
 
   add_foreign_key "body_states", "run_records"
   add_foreign_key "competition_evaluations", "run_records"
+  add_foreign_key "competition_places", "run_records"
   add_foreign_key "run_records", "users"
   add_foreign_key "weather_conditions", "run_records"
 end
