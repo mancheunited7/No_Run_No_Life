@@ -19,6 +19,7 @@ class CompetitionResult::RunRecordsController < ApplicationController
     end
   end
 
+
   def show
   end
 
@@ -37,9 +38,11 @@ class CompetitionResult::RunRecordsController < ApplicationController
     @comp_result.destroy
     redirect_to mypages_path, notice: t('flash.comp_result.destroy')
   end
+
 end
 
 private
+
 
 def set_comp_result
   @comp_result = RunRecord.find(params[:id])
