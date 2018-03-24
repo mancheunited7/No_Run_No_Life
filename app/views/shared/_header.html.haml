@@ -1,9 +1,9 @@
-%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+%nav.navbar.navbar-expand-lg
   %button.navbar-toggler{"data-toggle" => "collapse", :type => "button"}
   .collapse.navbar-collapse
     %ul.navbar-nav
       %li.nav-item
-        %a.nav-link #{t '.top'}
+        %a.nav-link{href: root_path} #{t '.top'}
       %li.nav-item.dropdown
         %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{t '.mypage'}
         .dropdown-menu
