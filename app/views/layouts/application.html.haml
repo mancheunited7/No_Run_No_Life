@@ -6,6 +6,7 @@
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag "//www.google.com/jsapi", "chartkick"
     = favicon_link_tag('/favicon-tsuchinoko.jpg')
     %script{:src => "//maps.google.com/maps/api/js?v=3&key=#{p ENV['GOOGLE_MAP']}"}
     %script{:src => "//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"}

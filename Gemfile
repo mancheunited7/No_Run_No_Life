@@ -81,3 +81,5 @@ gem 'ransack'
 
 gem 'gmaps4rails'
 gem 'geocoder'
+
+gem 'chartkick'

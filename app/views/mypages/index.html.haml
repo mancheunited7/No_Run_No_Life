@@ -18,6 +18,7 @@
         - @best_time_list.each do |key, value|
           %td= run_time(value)
 %h3= t '.graph'
+= column_chart @distance_data, width:"500px"
 %h3= t '.practices_list'
 .table-responsive
   %table.table.table-striped.table-bordered.table-hover

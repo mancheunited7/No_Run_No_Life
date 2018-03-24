@@ -6,5 +6,7 @@ class MypagesController < ApplicationController
     @comp_result_maps = CompetitionPlace.set_map(@comp_results)
     @best_time_list = RunRecord.best_time_calc(@comp_results)
     @user = User.find_by(id: current_user.id)
+    @graph_data = current_user.run_records.order(:run_record_day).limit(10)
+    @distance_data = @graph_data.pluck(:run_record_day, :run_distance)
   end
 end
