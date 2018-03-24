@@ -27,4 +27,14 @@ class User < ApplicationRecord
     SecureRandom.uuid
   end
 
+  def self.run_level_up_decision(comp_result)
+    user = User.find_by(id: comp_result.user_id)
+    user.total_run_experience += comp_result.run_distance
+
+    if user.total_run_experience > RunExperience.find_by(run_level: user.run_level.to_i + 1).need_experience_point
+      user.run_level += 1
+    end
+    user.save
+  end
+
 end

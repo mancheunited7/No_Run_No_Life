@@ -1,0 +1,2 @@
+class RunExperience < ApplicationRecord
+end

@@ -12,14 +12,14 @@ class CompetitionResult::RunRecordsController < ApplicationController
     @comp_result = RunRecord.new(comp_result_params)
     @comp_result.user_id = current_user.id
     @comp_result.run_class = 1
-    @comp_result.run_calc_time = RunRecord.calc_time(@comp_result.run_hour, @comp_result.run_minute, @comp_result.run_second)
+    @comp_result.run_calc_time = RunRecord.calc_time(@comp_result)
+    User.run_level_up_decision(@comp_result)
     if @comp_result.save
       redirect_to mypages_path, notice: t('flash.comp_result.create')
     else
       render :new
     end
   end
-
 
   def show
   end
@@ -43,7 +43,6 @@ class CompetitionResult::RunRecordsController < ApplicationController
 end
 
 private
-
 
 def set_comp_result
   @comp_result = RunRecord.find(params[:id])

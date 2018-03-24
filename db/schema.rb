@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180323093415) do
+ActiveRecord::Schema.define(version: 20180324032706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,13 @@ ActiveRecord::Schema.define(version: 20180323093415) do
     t.index ["run_record_id"], name: "index_competition_places_on_run_record_id"
   end
 
+  create_table "run_experiences", force: :cascade do |t|
+    t.integer "run_level"
+    t.integer "need_experience_point"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "run_records", force: :cascade do |t|
     t.bigint "user_id"
     t.integer "run_class", null: false
@@ -92,8 +99,8 @@ ActiveRecord::Schema.define(version: 20180323093415) do
     t.string "name"
     t.string "avatar"
     t.string "avatar_cache"
-    t.integer "total_run_experience"
-    t.integer "run_level"
+    t.integer "total_run_experience", default: 0, null: false
+    t.integer "run_level", default: 0, null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
