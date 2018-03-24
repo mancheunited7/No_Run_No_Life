@@ -1,0 +1,14 @@
+.navbar.navbar-expand-lg{
+  background-color: #0000ff;
+  .navbar-nav{
+    >li >a{
+        color: #FFFFFF;
+    }
+    >li >a:hover,
+    .dropdown-toggle:hover,
+      > .open > a:hover{
+      background-color: whitesmoke;
+      color: black;
+    }
+  }
+}
