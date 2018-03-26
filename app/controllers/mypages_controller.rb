@@ -8,5 +8,6 @@ class MypagesController < ApplicationController
     @user = User.find_by(id: current_user.id)
     @graph_data = current_user.run_records.order(:run_record_day).limit(10)
     @distance_data = @graph_data.pluck(:run_record_day, :run_distance)
+    @comp_schedules = current_user.competition_infos
   end
 end

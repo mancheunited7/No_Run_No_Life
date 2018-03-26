@@ -41,6 +41,22 @@
           %td= link_to "#{t '.show'}", practice_run_record_path(practice), class: "btn btn-primary"
           %td= link_to "#{t '.edit'}", edit_practice_run_record_path(practice), class: "btn btn-primary"
           %td= link_to "#{t '.destroy'}", practice_run_record_path(practice), method: :delete, class: "btn btn-primary"
+%h3= t ('.comp_schedules')
+.table-responsive
+  %table.table.tablestriped.table-bordered.table-hover
+    %thead
+      %tr
+        %th= t '.competition_day'
+        %th= t '.competition_name'
+        %th= t '.competition_place'
+        %th= t '.competition_site'
+    %tbody
+      - @comp_schedules.each do |comp_schedule|
+        %tr
+          %td=  comp_schedule.competition_day
+          %td=  comp_schedule.competition_name
+          %td=  comp_schedule.competition_place
+          %td=  link_to comp_schedule.competition_site, "#{comp_schedule.competition_site}", target: "_blank"
 %h3= t '.competition_result_list'
 .table-responsive
   %table.table.table-striped.table-bordered.table-hover

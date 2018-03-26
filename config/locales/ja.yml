@@ -106,10 +106,12 @@ ja:
       distance: 走った距離
       time: タイム
       heart_rate: 心拍数
+      comp_schedules: 大会の予定
       competition_result_list: 大会記録一覧
       competition_day: 開催日
       competition_name: 大会名
       competition_place: 開催場所
+      competition_site: 大会サイト
       competition_point: 大会の評価
       competition_map: ここ走ったよ〜
       competition_map_caution: （マーカーをクリックすると、大会名が表示されるよ）
@@ -123,6 +125,14 @@ ja:
       competition_name: 大会名
       competition_place: 開催場所
       competition_site: 大会サイト
+      competition_create: 大会登録
+      lets_search: 検索しよう
+    competition_infos_list:
+      competition_day: 開催日
+      competition_name: 大会名
+      competition_place: 開催場所
+      competition_site: 大会サイト
+      competition_create: 大会登録
       lets_search: 検索しよう
     new:
       title: 大会情報取得
