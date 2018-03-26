@@ -4,7 +4,8 @@ class User < ApplicationRecord
          :validatable, :confirmable, :omniauthable
 
   has_many :run_records, dependent: :destroy
-
+  has_many :user_comp_schedules, dependent: :destroy
+  has_many :competition_infos, through: :user_comp_schedules
 
   def self.find_userinfo(auth)
     user = User.find_by(provider: auth.provider, userid: auth.uid)
