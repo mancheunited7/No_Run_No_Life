@@ -1,0 +1,2 @@
+module UserCompScheduleHelper
+end

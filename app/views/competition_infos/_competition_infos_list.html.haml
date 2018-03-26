@@ -6,11 +6,13 @@
         %th= t '.competition_name'
         %th= t '.competition_place'
         %th= t '.competition_site'
+        %th= t '.competition_create'
       - competition_infos.each do |info|
         %tr
           %td= info.competition_day
           %td= info.competition_name
           %td= info.competition_place
           %td= link_to info.competition_site, "#{info.competition_site}", target: "_blank"
+          %td= button_to "#{t '.competition_create'}", user_comp_schedules_path(user_comp_schedule:{user_id: current_user.id, competition_info_id: info.id}), class: "btn btn-primary"
 
 = paginate competition_infos

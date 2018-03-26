@@ -123,6 +123,14 @@ ja:
       competition_name: 大会名
       competition_place: 開催場所
       competition_site: 大会サイト
+      competition_create: 大会登録
+      lets_search: 検索しよう
+    competition_infos_list:
+      competition_day: 開催日
+      competition_name: 大会名
+      competition_place: 開催場所
+      competition_site: 大会サイト
+      competition_create: 大会登録
       lets_search: 検索しよう
     new:
       title: 大会情報取得

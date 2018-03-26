@@ -1,4 +1,4 @@
 class UserCompSchedule < ApplicationRecord
-  belongs_to :user_id
-  belongs_to :competition_info_id
+  belongs_to :user
+  belongs_to :competition_info
 end
