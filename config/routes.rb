@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
+  get 'users/show'
+
   root 'top#index'
   resources :mypages, only:[:index]
   namespace :competition_result do
@@ -21,4 +25,5 @@ Rails.application.routes.draw do
   resources :boards, shallow: true do
     resources :comments, only:[:create, :edit, :update, :destroy]
   end
+  resources :users, only:[:index, :show]
 end

@@ -7,7 +7,8 @@
       %li.nav-item.dropdown
         %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{t '.mypage'}
         .dropdown-menu
-          = link_to "#{t '.mypagetop'}", mypages_path,  class: "dropdown-item"
+          - if user_signed_in?
+            = link_to "#{t '.mypagetop'}", user_path(current_user.id),  class: "dropdown-item"
           = link_to "#{t '.where_run'}", new_competition_result_run_record_path,  class: "dropdown-item"
           = link_to "#{t '.practice_record'}", new_practice_run_record_path,  class: "dropdown-item"
       %li.nav-item.dropdown
@@ -18,7 +19,7 @@
       %li.nav-item
         %a.nav-link{href: boards_path} #{t '.board'}
       %li.nav-item
-        %a.nav-link #{t '.everyone_record'}
+        %a.nav-link{href: users_path} #{t '.everyone_record'}
     %ul.navbar-nav.ml-auto
       - if user_signed_in?
         %li.nav-item.dropdown

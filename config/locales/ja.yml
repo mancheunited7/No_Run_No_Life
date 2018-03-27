@@ -96,35 +96,6 @@ ja:
         Didnt_receive_confirmation_instructions: 確認メール再送信
         twitter_login: Twiterログイン
         instagram_login: instagramログイン
-  mypages:
-    index:
-      title: "%{current_user}さんのマイページ"
-      run_level: ランレベル
-      run_experience: ラン経験値
-      best_time_list: ベストタイム一覧
-      graph: グラフ
-      best_time_5: 5キロ
-      best_time_10: 10キロ
-      best_time_21: ハーフ
-      best_time_42: フル
-      best_time_100: 100キロ
-      practices_list: 練習記録一覧
-      day: 練習日
-      distance: 走った距離
-      time: タイム
-      heart_rate: 心拍数
-      comp_schedules: 大会の予定
-      competition_result_list: 大会記録一覧
-      competition_day: 開催日
-      competition_name: 大会名
-      competition_place: 開催場所
-      competition_site: 大会サイト
-      competition_point: 大会の評価
-      competition_map: ここ走ったよ〜
-      competition_map_caution: （マーカーをクリックすると、大会名が表示されるよ）
-      show: 詳細
-      edit: 編集
-      destroy: 削除
   competition_infos:
     index:
       title: 大会情報一覧
@@ -189,6 +160,42 @@ ja:
     form:
       content: コメント
       create_comment: コメント投稿
+  users:
+    index:
+      title: みんなのランニング記録
+      user_name: ユーザー名
+      run_day: 走った日
+      run_distance: 走った距離
+      run_time: タイム
+      comment: コメント
+    show:
+      title: "%{user_name}さんのマイページ"
+      run_level: ランレベル
+      run_experience: ラン経験値
+      best_time_list: ベストタイム一覧
+      graph: グラフ
+      best_time_5: 5キロ
+      best_time_10: 10キロ
+      best_time_21: ハーフ
+      best_time_42: フル
+      best_time_100: 100キロ
+      practices_list: 練習記録一覧
+      day: 練習日
+      distance: 走った距離
+      time: タイム
+      heart_rate: 心拍数
+      comp_schedules: 大会の予定
+      competition_result_list: 大会記録一覧
+      competition_day: 開催日
+      competition_name: 大会名
+      competition_place: 開催場所
+      competition_site: 大会サイト
+      competition_point: 大会の評価
+      competition_map: ここ走ったよ〜
+      competition_map_caution: （マーカーをクリックすると、大会名が表示されるよ）
+      show: 詳細
+      edit: 編集
+      destroy: 削除
   flash:
     competition_info:
       create: 大会情報を更新しました。

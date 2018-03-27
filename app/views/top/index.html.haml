@@ -21,7 +21,7 @@
     - @users.each do |user|
       = t '.user_name'
       = ":"
-      = user.name
+      = link_to user.name, user_path(user.id)
       = t '.created_at'
       = ":"
       = user.created_at.strftime("%Y-%m-%d")

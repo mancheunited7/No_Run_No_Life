@@ -26,4 +26,12 @@ class RunRecord < ApplicationRecord
      best_time_list
    end
 
+   def self.recent_run_record_find(users)
+     run_records = {}
+     users.each do |user|
+       run_records[user.id] = RunRecord.where(user_id: user.id).order("run_record_day DESC").first
+     end
+     run_records
+   end
+
 end
