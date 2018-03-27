@@ -11,6 +11,10 @@ ja:
         name: ユーザー名
       board:
         title: タイトル
+  top:
+    index:
+      user_name: ユーザー名
+      created_at: 登録日
   shared:
     header:
       top: ホーム
