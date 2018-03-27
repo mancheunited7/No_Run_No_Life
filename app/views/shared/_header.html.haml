@@ -15,11 +15,8 @@
         .dropdown-menu
           = link_to "#{t '.get_competition_info'}", new_competition_info_path,  class: "dropdown-item"
           = link_to "#{t '.search_competition'}", competition_infos_path,  class: "dropdown-item"
-      %li.nav-item.dropdown
-        %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} #{t '.question_wanted_corner'}
-        .dropdown-menu
-          = link_to "#{t '.question_corner'}", '',  class: "dropdown-item"
-          = link_to "#{t '.wanted_corner'}", '',  class: "dropdown-item"
+      %li.nav-item
+        %a.nav-link{href: boards_path} #{t '.board'}
       %li.nav-item
         %a.nav-link #{t '.everyone_record'}
     %ul.navbar-nav.ml-auto

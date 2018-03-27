@@ -11,12 +11,14 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks#sns_login"
   }
-
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   resources :competition_infos, only:[:new, :create, :index] do
     collection do
       get 'search'
     end
   end
-  resources :user_comp_schedules, only:[:create] 
+  resources :user_comp_schedules, only:[:create]
+  resources :boards, shallow: true do
+    resources :comments, only:[:create, :edit, :update, :destroy]
+  end
 end

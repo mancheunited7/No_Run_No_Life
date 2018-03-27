@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :run_records, dependent: :destroy
   has_many :user_comp_schedules, dependent: :destroy
   has_many :competition_infos, through: :user_comp_schedules
+  has_many :comments, dependent: :destroy
+  has_many :boards, dependent: :destroy
 
   def self.find_userinfo(auth)
     user = User.find_by(provider: auth.provider, userid: auth.uid)
