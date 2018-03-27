@@ -1,7 +1,7 @@
 = form_for([@board, @comment]) do |f|
   .field
     = f.label :"#{t '.content'}"
-    = f.text_area :content, class: "form-control"
+    = f.text_area :content, rows: "5", class: "form-control"
     = f.hidden_field :user_name, value:current_user.name
     = f.hidden_field :board_id
   .button-field
