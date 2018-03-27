@@ -13,8 +13,19 @@ ja:
         title: タイトル
   top:
     index:
+      recent_create_user: 最新登録ユーザー
+      user_all: ユーザー一覧へ
       user_name: ユーザー名
       created_at: 登録日
+      about_app: No Run, No Lifeの機能について
+      management: 大会記録を保存し、自己記録を管理！！
+      googlemap: 今まで走ってきた大会が、googleマップに！！
+      competition_search: 全国のマラソン大会を自由に検索！！
+      csv: 日々の練習記録を保存し、CSV出力で分析可能に！！
+      board: 悩みや疑問は、質問/募集コーナーで解決！！
+      run_level: 自己ベスト更新、走った距離でランレベルアップ！！
+      recent_contribution: 最新の投稿
+      everyone_record: 最新投稿一覧へ
   shared:
     header:
       top: ホーム
@@ -28,7 +39,6 @@ ja:
       question_wanted_corner: 質問/募集コーナー
       question_corner: 質問コーナー
       wanted_corner: 募集コーナー
-      everyone_record: みんなの記録
       welcome_to: "ようこそ%{name}さん"
       edit_account: アカウント編集
       logout: ログアウト
@@ -68,6 +78,12 @@ ja:
       competition_point: 大会評価
       competition_evaluation: 大会についてのコメント
       back_to_mypage: マイページへ戻る
+    recent_contribution_list:
+      user_name: ユーザー名
+      created_at: 登録日
+      run_day: 走った日
+      run_distance: 走った距離
+      run_time: タイム
   devise:
     confirmations:
       new:
@@ -162,12 +178,15 @@ ja:
       create_comment: コメント投稿
   users:
     index:
-      title: みんなのランニング記録
+      title: ユーザー一覧
+      created_at: 登録日
       user_name: ユーザー名
       run_day: 走った日
       run_distance: 走った距離
       run_time: タイム
       comment: コメント
+    recent_run_record:
+      title: 最新投稿一覧
     show:
       title: "%{user_name}さんのマイページ"
       run_level: ランレベル

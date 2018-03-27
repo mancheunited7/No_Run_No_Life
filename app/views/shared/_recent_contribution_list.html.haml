@@ -1,0 +1,15 @@
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover.table-sm
+    %thead
+      %tr
+        %th= t '.user_name'
+        %th= t '.run_day'
+        %th= t '.run_distance'
+        %th= t '.run_time'
+    %tbody
+      - run_records.each do |key, run_record|
+        %tr
+          %td= link_to run_record.user.name, user_path(run_record.user_id)
+          %td= run_record.run_record_day
+          %td= run_distance(run_record)
+          %td= run_time(run_record)

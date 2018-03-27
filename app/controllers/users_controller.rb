@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
-    @run_records = RunRecord.recent_run_record_find(@users)
+    @users = User.all.page(params[:page]).per(10)
   end
 
   def show
@@ -15,4 +14,10 @@ class UsersController < ApplicationController
     @distance_data = @graph_data.pluck(:run_record_day, :run_distance)
     @comp_schedules = current_user.competition_infos
   end
+
+  def recent_run_record
+    @users = User.all
+    @run_records = RunRecord.recent_run_record_find(@users)
+  end
+
 end
