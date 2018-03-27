@@ -29,7 +29,10 @@ class RunRecord < ApplicationRecord
    def self.recent_run_record_find(users)
      run_records = {}
      users.each do |user|
-       run_records[user.id] = RunRecord.where(user_id: user.id).order("run_record_day DESC").first
+       runrecord = RunRecord.where(user_id: user.id).order("run_record_day DESC").first
+       unless runrecord.nil?
+         run_records[user.id] = runrecord
+       end
      end
      run_records
    end

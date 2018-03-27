@@ -13,7 +13,7 @@ class Practice::RunRecordsController < ApplicationController
     @practice.run_calc_time = RunRecord.calc_time(@practice)
     User.run_level_up_decision(@practice)
     if @practice.save
-      redirect_to mypages_path, notice: t('flash.practice.create')
+      redirect_to user_path(@practice.user_id), notice: t('flash.practice.create')
     else
       render :new
     end

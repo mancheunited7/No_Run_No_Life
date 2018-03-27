@@ -1,19 +1,15 @@
 %h2= t '.title'
 
 .table-responsive
-  %table.table.table-striped.table-borderd.table-hover
+  %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
         %th= t '.user_name'
-        %th= t '.run_day'
-        %th= t '.run_distance'
-        %th= t '.run_time'
-        %th= t '.comment'
+        %th= t '.created_at'
     %tbody
-      - @run_records.each do |key, run_record|
+      - @users.each do |user|
         %tr
-          %td= link_to run_record.user.name, user_path(run_record.user_id)
-          %td= run_record.run_record_day
-          %td= run_record.run_distance
-          %td= run_time(run_record)
-          %td= run_record.run_content
+          %td= link_to user.name, user_path(user)
+          %td= user.created_at.strftime("%Y-%m-%d")
+
+= paginate @users

@@ -2,26 +2,27 @@
   .jumbotron-title
     No Run, No Life
 .inline-block
-  %h3 新着情報
-  %ul.info-box
-    %li 大会情報を更新しました
-    %li 新たにユーザーAさんが登録しました
-.inline-block
-  %h3 No Run, No Lifeについて
-  %ul.info-box
-    %li 大会記録を保存し、自己記録を管理！！
-    %li 今まで走ってきた大会が、googleマップに！！
-    %li 全国のマラソン大会を自由に検索！！
-    %li 日々の練習記録を保存し、CSV出力で分析可能に！！
-    %li 悩みや疑問は、質問/募集コーナーで解決！！
-    %li 自己ベスト更新、走った距離でランレベルアップ！！
-.inline-block
-  %h3 ユーザー一覧
-  %ul.info-box
+  %h3= t '.recent_create_user'
+  = link_to "(#{t '.user_all'})", users_path
+  %ol.info-box
     - @users.each do |user|
-      = t '.user_name'
-      = ":"
-      = link_to user.name, user_path(user.id)
-      = t '.created_at'
-      = ":"
-      = user.created_at.strftime("%Y-%m-%d")
+      %li
+        = t '.user_name'
+        = ":"
+        = link_to user.name, user_path(user.id)
+        = t '.created_at'
+        = ":"
+        = user.created_at.strftime("%Y-%m-%d")
+.inline-block
+  %h3= t '.about_app'
+  %ol.info-box
+    %li= t '.management'
+    %li= t '.googlemap'
+    %li= t '.competition_search'
+    %li= t '.csv'
+    %li= t '.board'
+    %li= t '.run_level'
+.inline-block
+  %h3= t '.recent_contribution'
+  = link_to "(#{t '.everyone_record'})", recent_run_record_users_path
+  = render 'shared/recent_contribution_list', run_records: @run_records
