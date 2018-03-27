@@ -162,25 +162,25 @@ ja:
       competition_site: 大会サイト
   boards:
     index:
-      title: スレッド一覧
-      create_new_thread: 新しいスレッドを作成しよう
-      thread_title: スレッドタイトル
+      title: スレ一覧
+      create_new_thread: 新しいスレを作成しよう
+      thread_title: スレタイ
       created_at: 作成日
-      edit: スレッドタイトル編集
+      edit: スレタイ編集
     new:
-      title: 新規スレッド作成
+      title: 新規スレ作成
     form:
-      board_create: スレッド作成
+      board_create: スレ作成
     show:
-      title: スレッド詳細
-      back_to_index: スレッド一覧へ戻る
-      edit_title: スレッドタイトル編集
-      delete_title: スレッド削除
+      title: スレ詳細
+      back_to_index: スレ一覧へ戻る
+      edit_title: スレタイ編集
+      delete_title: スレ削除
       user_name: ユーザー名
       edit: 編集
       delete: 削除
     edit:
-      title: スレッドタイトル編集
+      title: スレタイ編集
   comments:
     form:
       content: コメント
