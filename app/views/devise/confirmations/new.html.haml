@@ -1,10 +1,10 @@
-%h2= t '.title'
-= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
-  .actions
-    = f.submit "#{t '.title'}"
-= render "devise/shared/links"
+.form-wrapper
+  %h2= t '.title'
+  = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+    = devise_error_messages!
+    .form-item
+      = f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), placeholder: "メールアドレス"
+    .button-panel
+      = f.submit "#{t '.title'}",class: "btn btn-default btn-block"
+  .form-footer
+    = render "devise/shared/links"
