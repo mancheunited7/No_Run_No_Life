@@ -83,3 +83,6 @@ gem 'gmaps4rails'
 gem 'geocoder'
 
 gem 'chartkick'
+
+gem 'font-awesome-rails'
+gem 'bootstrap-social-rails'

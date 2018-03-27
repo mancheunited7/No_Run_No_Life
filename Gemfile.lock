@@ -55,6 +55,8 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
+    bootstrap-social-rails (4.12.0)
+      railties (>= 3.1)
     builder (3.2.3)
     byebug (10.0.0)
     capybara (2.18.0)
@@ -97,6 +99,8 @@ GEM
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.23)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     geocoder (1.4.4)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -303,6 +307,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap (~> 4.0.0)
+  bootstrap-social-rails
   byebug
   capybara (~> 2.13)
   chartkick
@@ -311,6 +316,7 @@ DEPENDENCIES
   devise-bootstrap-views
   dotenv-rails
   erb2haml
+  font-awesome-rails
   geocoder
   gmaps4rails
   haml-rails

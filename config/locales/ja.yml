@@ -91,19 +91,28 @@ ja:
     passwords:
       new:
         title: パスワード再発行
+        password_confirmation: パスワード確認
     registrations:
       new:
         title: ユーザー登録
-        characters_minimun: "%{minimum_password_length}文字以上"
+        mail_address: メールアドレス
+        user_name: ユーザー名
+        characters_minimun: "パスワード: %{minimum_password_length}文字以上"
+        password_confirmation: パスワード確認
       edit:
         title: ユーザー情報編集
+        mail_address: メールアドレス
+        user_name: ユーザー名
         characters_minimun: "変更する場合は%{minimum_password_length}文字以上"
-        leave_blank_if_you_dont_want_to_change_it: 変更しない場合は空白のままにしてください。
+        leave_blank_if_you_dont_want_to_change_it: 変更しない場合は空白のまま
+        password_confirmation: パスワード確認
         update: ユーザー情報更新
         back: 戻る
     sessions:
       new:
         title: ログイン
+        mail_address: メールアドレス
+        password: パスワード
     shared:
       links:
         Log_in: ログイン
