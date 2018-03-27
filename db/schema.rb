@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180326022311) do
+ActiveRecord::Schema.define(version: 20180326061911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boards", force: :cascade do |t|
+    t.string "title", default: "", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "body_states", force: :cascade do |t|
     t.bigint "run_record_id"
@@ -23,6 +30,16 @@ ActiveRecord::Schema.define(version: 20180326022311) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["run_record_id"], name: "index_body_states_on_run_record_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "board_id"
+    t.integer "user_id", null: false
+    t.string "user_name", default: "", null: false
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["board_id"], name: "index_comments_on_board_id"
   end
 
   create_table "competition_evaluations", force: :cascade do |t|
@@ -129,6 +146,7 @@ ActiveRecord::Schema.define(version: 20180326022311) do
   end
 
   add_foreign_key "body_states", "run_records"
+  add_foreign_key "comments", "boards"
   add_foreign_key "competition_evaluations", "run_records"
   add_foreign_key "competition_places", "run_records"
   add_foreign_key "run_records", "users"
