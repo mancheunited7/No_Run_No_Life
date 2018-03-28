@@ -1,5 +1,8 @@
 .col-sm-6
   = form_for(@board) do |f|
+    = render 'shared/errors', object: @board
+    .field
+    = link_to "#{t '.back_to_thread_list'}", boards_path
     .field
       = f.label :title
       = f.text_field :title, class: "form-control"

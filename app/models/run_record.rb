@@ -10,6 +10,12 @@ class RunRecord < ApplicationRecord
    accepts_nested_attributes_for :body_state, allow_destroy: true
    accepts_nested_attributes_for :competition_place, allow_destroy: true
 
+   validates :run_record_day, presence: true
+   validates :run_distance, presence: true
+  #  validates :run_minute, presence: true
+  #  validates :run_second, presence: true
+  #  validates :run_content, presence: true
+
    def self.calc_time(comp_result)
      if comp_result.run_hour.nil?
        comp_result.run_minute*60 + comp_result.run_second

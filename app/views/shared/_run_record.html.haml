@@ -1,5 +1,6 @@
 .col-sm-6
   = form_with(model: object, url: path) do |f|
+    = render 'shared/errors', object: object
     .field
       %h4= f.label :"#{t '.run_day'}"
       = f.date_select :run_record_day,
