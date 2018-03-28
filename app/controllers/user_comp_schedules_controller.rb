@@ -4,7 +4,7 @@ class UserCompSchedulesController < ApplicationController
     if @user_comp_schedule.save
       redirect_to competition_infos_path
     else
-      render 'competition_infos/index'
+      render 'competition_infos/index', notice: t('flash.cmp_shcedule.create')
     end
   end
 

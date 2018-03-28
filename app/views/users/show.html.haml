@@ -1,8 +1,10 @@
 %h1= t('.title', user_name: @user.name)
 %h3= t('.run_level')
-= @user.run_level
+.red-color
+  = @user.run_level
 %h3= t('.run_experience')
-= @user.total_run_experience
+.red-color
+  = @user.total_run_experience
 %h3= t '.best_time_list'
 .table-responsive
   %table.table.table-striped.table-bordered.table-hover
@@ -17,8 +19,6 @@
       %tr
         - @best_time_list.each do |key, value|
           %td= run_time(value)
-%h3= t '.graph'
-= column_chart @distance_data, width:"500px"
 %h3= t '.practices_list'
 .table-responsive
   %table.table.table-striped.table-bordered.table-hover
