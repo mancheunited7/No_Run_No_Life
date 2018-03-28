@@ -26,6 +26,8 @@ ja:
       run_level: 自己ベスト更新、走った距離でランレベルアップ！！
       recent_contribution: 最新の投稿
       everyone_record: 最新投稿一覧へ
+      no_contribution: まだ、誰も投稿していません。
+      no_user: まだ、誰も登録していません。
   shared:
     header:
       top: ホーム

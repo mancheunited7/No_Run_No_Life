@@ -1,4 +1,6 @@
 class CompetitionInfosController < ApplicationController
+  before_action :authenticate_user!
+  
   require 'open-uri'
   require 'date'
 

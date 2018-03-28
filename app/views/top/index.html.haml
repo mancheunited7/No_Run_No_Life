@@ -3,7 +3,10 @@
     No Run, No Life
 .inline-block
   %h3= t '.recent_create_user'
-  = link_to "(#{t '.user_all'})", users_path
+  - unless @users.blank?
+    = link_to "(#{t '.user_all'})", users_path
+  - else
+    #{t '.no_user'}
   %ol.info-box
     - @users.each do |user|
       %li
@@ -24,5 +27,8 @@
     %li= t '.run_level'
 .inline-block
   %h3= t '.recent_contribution'
-  = link_to "(#{t '.everyone_record'})", recent_run_record_users_path
-  = render 'shared/recent_contribution_list', run_records: @run_records
+  - unless @run_records.blank?
+    = link_to "(#{t '.everyone_record'})", recent_run_record_users_path
+    = render 'shared/recent_contribution_list', run_records: @run_records
+  - else
+    #{t '.no_contribution'}

@@ -86,8 +86,8 @@
 %h3= t '.competition_map'
 %h5= t '.competition_map_caution'
 - unless @comp_result_maps.empty?
-  %div(style="width: 100%;" )
-  #map(style="height: 500px;" )
+  %div(style="width: 100%;")
+  #map(style="height: 500px;")
   :javascript
     var mapdata = #{raw @comp_result_maps.to_json};
     handler = Gmaps.build('Google');
@@ -97,3 +97,17 @@
       handler.fitMapToBounds();
       handler.getMap().setZoom(5);
       });
+
+    $.each(mapdata, function(json, number){
+      json.marker = markers[number];
+    });
+
+    $.each(mapdata, function(json){
+      google.maps.event.addListener(json.marker.getServiceObject(), "click", function() {
+        openinfowindow = new google.maps.InfoWindow({
+          content: this.serviceObject.infowindow
+        });
+        openinfowindow.open(this.serviceObject.map, this.serviceObject);
+      });
+    });
+  });
