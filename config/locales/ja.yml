@@ -47,6 +47,7 @@ ja:
     run_record:
       run_day: 走った日を入力しよう
       weather_conditions: 気象条件を入力しよう
+      competition_name: 大会名を入力しよう
       competition_start_place: 大会のスタート地点を入力しよう
       weather: 天気
       temperature: 気温
@@ -201,7 +202,6 @@ ja:
       run_level: ランレベル
       run_experience: ラン経験値
       best_time_list: ベストタイム一覧
-      graph: グラフ
       best_time_5: 5キロ
       best_time_10: 10キロ
       best_time_21: ハーフ
@@ -242,6 +242,8 @@ ja:
       create: コメントを投稿しました。
       update: コメントを更新しました。
       delete: コメントを削除しました。
+    cmp_shcedule:
+      create: 大会予定を登録しました。
   views:
     pagination:
       first: "&laquo; 最初"

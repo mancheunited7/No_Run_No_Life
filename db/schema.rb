@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180326061911) do
+ActiveRecord::Schema.define(version: 20180328021217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20180326061911) do
     t.float "competition_place_longitude", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "competition_name", default: "", null: false
     t.index ["run_record_id"], name: "index_competition_places_on_run_record_id"
   end
 

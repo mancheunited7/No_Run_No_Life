@@ -20,8 +20,10 @@ class RunRecord < ApplicationRecord
 
    def self.best_time_calc(comp_result)
      best_time_list = {}
-     [5, 10, 21.0975, 42.195, 100].each do |distance|
-       best_time_list[distance] = comp_result.where(run_distance: distance).order(:run_calc_time).first
+     unless comp_result.empty?
+       [5, 10, 21.0975, 42.195, 100].each do |distance|
+         best_time_list[distance] = comp_result.where(run_distance: distance).order(:run_calc_time).first
+       end
      end
      best_time_list
    end

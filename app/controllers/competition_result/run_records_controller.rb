@@ -15,7 +15,7 @@ class CompetitionResult::RunRecordsController < ApplicationController
     @comp_result.run_calc_time = RunRecord.calc_time(@comp_result)
     User.run_level_up_decision(@comp_result)
     if @comp_result.save
-      redirect_to mypages_path, notice: t('flash.comp_result.create')
+      redirect_to user_path(@comp_result), notice: t('flash.comp_result.create')
     else
       render :new
     end
@@ -29,7 +29,7 @@ class CompetitionResult::RunRecordsController < ApplicationController
 
   def update
     if @comp_result.update(comp_result_params)
-      redirect_to mypages_path, notice: t('flash.comp_result.update')
+      redirect_to user_path(@comp_result), notice: t('flash.comp_result.update')
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class CompetitionResult::RunRecordsController < ApplicationController
 
   def destroy
     @comp_result.destroy
-    redirect_to mypages_path, notice: t('flash.comp_result.destroy')
+    redirect_to user_path(@comp_result), notice: t('flash.comp_result.destroy')
   end
 
 end
@@ -53,5 +53,5 @@ def comp_result_params
     weather_condition_attributes: [:id, :day_weather, :day_temperature, :day_humidity, :day_wind_speed],
     body_state_attributes: [:id, :heart_rate, :day_weight, :day_body_fat],
     competition_evaluation_attributes: [:id, :competition_point, :competition_evaluation],
-    competition_place_attributes: [:id, :competition_place_address, :competition_place_latitude, :competition_place_longitude])
+    competition_place_attributes: [:id, :competition_name, :competition_place_address, :competition_place_latitude, :competition_place_longitude])
 end
