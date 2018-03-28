@@ -1,5 +1,7 @@
 class Practice::RunRecordsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_run_record, only:[:show, :edit, :update, :destroy]
+  
   def new
     @practice = RunRecord.new
     @practice.build_weather_condition

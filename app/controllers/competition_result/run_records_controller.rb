@@ -1,5 +1,7 @@
 class CompetitionResult::RunRecordsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_comp_result, only:[:show, :edit, :update, :destroy]
+
   def new
     @comp_result = RunRecord.new
     @comp_result.build_weather_condition
@@ -13,9 +15,9 @@ class CompetitionResult::RunRecordsController < ApplicationController
     @comp_result.user_id = current_user.id
     @comp_result.run_class = 1
     @comp_result.run_calc_time = RunRecord.calc_time(@comp_result)
-    User.run_level_up_decision(@comp_result)
+    User.run_level_up_decision(@comp_result.user_id)
     if @comp_result.save
-      redirect_to user_path(@comp_result), notice: t('flash.comp_result.create')
+      redirect_to user_path(current_user.id), notice: t('flash.comp_result.create')
     else
       render :new
     end
@@ -29,7 +31,7 @@ class CompetitionResult::RunRecordsController < ApplicationController
 
   def update
     if @comp_result.update(comp_result_params)
-      redirect_to user_path(@comp_result), notice: t('flash.comp_result.update')
+      redirect_to user_path(@comp_result.user_id), notice: t('flash.comp_result.update')
     else
       render :edit
     end
