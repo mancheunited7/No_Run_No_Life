@@ -1,5 +1,6 @@
 %h2= t '.title'
 = form_with(model: @competition_info) do |f|
+  = render 'shared/errors', object: @competition_info
   .field
     = f.radio_button :competition_class, 1
     = f.label :competition_classification, "#{t '.road'}", value: 1

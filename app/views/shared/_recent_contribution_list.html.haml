@@ -9,7 +9,7 @@
     %tbody
       - run_records.each do |key, run_record|
         %tr
-          %td= link_to run_record.user.name, user_path(run_record.user_id)
+          %td= link_to run_record.user.name, user_path(run_record.user.id)
           %td= run_record.run_record_day
           %td= run_distance(run_record)
           %td= run_time(run_record)

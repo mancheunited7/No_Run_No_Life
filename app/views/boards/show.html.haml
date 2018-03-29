@@ -1,5 +1,6 @@
 .col-sm-6
   %h2= t '.title'
+  = link_to "#{t '.edit_title'}", edit_board_path(@board)
   = link_to "#{t '.back_to_index'}", boards_path
   .thread-title
     = @board.title

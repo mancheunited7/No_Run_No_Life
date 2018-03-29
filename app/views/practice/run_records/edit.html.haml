@@ -1,2 +1,3 @@
 %h2= t '.title'
+= link_to "#{t '.back_to_user_show'}", user_path(@practice.user.id), class: "btn btn-primary"
 = render 'shared/run_record', object: @practice, path: practice_run_record_path(@practice)

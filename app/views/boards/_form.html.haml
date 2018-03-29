@@ -1,5 +1,6 @@
 .col-sm-6
   = form_for(@board) do |f|
+    = render 'shared/errors', object: @board 
     .field
       = f.label :title
       = f.text_field :title, class: "form-control"
