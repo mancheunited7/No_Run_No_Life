@@ -15,7 +15,7 @@ class CompetitionResult::RunRecordsController < ApplicationController
     @comp_result.user_id = current_user.id
     @comp_result.run_class = 1
     @comp_result.run_calc_time = RunRecord.calc_time(@comp_result)
-    User.run_level_up_decision(@comp_result.user_id)
+    User.run_level_up_decision(@comp_result.user.id)
     if @comp_result.save
       redirect_to user_path(current_user.id), notice: t('flash.comp_result.create')
     else
@@ -31,7 +31,8 @@ class CompetitionResult::RunRecordsController < ApplicationController
 
   def update
     if @comp_result.update(comp_result_params)
-      redirect_to user_path(@comp_result.user_id), notice: t('flash.comp_result.update')
+      User.run_level_up_decision(@comp_result.user.id)
+      redirect_to user_path(current_user.id), notice: t('flash.comp_result.update')
     else
       render :edit
     end
@@ -39,7 +40,8 @@ class CompetitionResult::RunRecordsController < ApplicationController
 
   def destroy
     @comp_result.destroy
-    redirect_to user_path(@comp_result), notice: t('flash.comp_result.destroy')
+    User.run_level_up_decision(@comp_result.user.id)
+    redirect_to user_path(current_user.id), notice: t('flash.comp_result.destroy')
   end
 
 end

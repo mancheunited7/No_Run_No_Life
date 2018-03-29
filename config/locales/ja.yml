@@ -80,7 +80,7 @@ ja:
       run_content: 今日のランについて
       competition_point: 大会評価
       competition_evaluation: 大会についてのコメント
-      back_to_mypage: マイページへ戻る
+      back_to_user_show: マイページへ戻る
     recent_contribution_list:
       user_name: ユーザー名
       created_at: 登録日
@@ -95,6 +95,10 @@ ja:
       new:
         title: パスワード再発行
         password_confirmation: パスワード確認
+      edit:
+        title: パスワード変更
+        characters_minimun: "新たなパスワード: %{minimum_password_length}文字以上"
+        password_confirmation: 新たなパスワード確認
     registrations:
       new:
         title: ユーザー登録
@@ -152,12 +156,16 @@ ja:
         title: 大会記録詳細
       edit:
         title: 大会記録編集
+        back_to_user_show: マイページへ戻る
   practice:
     run_records:
       new:
         title: 練習の記録を保存しよう
       edit:
         title: 練習記録を編集しよう
+        back_to_user_show: マイページへ戻る
+      show:
+        title: 練習記録詳細
     competition_infos_list:
       competition_day: 開催日
       competition_name: 大会名
@@ -188,6 +196,9 @@ ja:
     form:
       content: コメント
       create_comment: コメント投稿
+    edit:
+      title: コメント編集
+      back_to_thread_show: スレ詳細へ戻る
   users:
     index:
       title: ユーザー一覧
@@ -238,8 +249,8 @@ ja:
       update: 大会記録を更新しました。
       destroy: 大会記録を削除しました。
     board:
-      create: スレッドを作成しました。
-      update: スレッドタイトルを更新しました。
+      create: スレを作成しました。
+      update: スレタイを更新しました。
     comment:
       create: コメントを投稿しました。
       update: コメントを更新しました。

@@ -41,4 +41,4 @@
         %tr
           %td= t '.competition_evaluation'
           %td= show_result.competition_evaluation.competition_evaluation
-= link_to "#{t '.back_to_mypage'}", mypages_path, class: "btn btn-primary"
+= link_to "#{t '.back_to_user_show'}", user_path(show_result.user.id), class: "btn btn-primary"

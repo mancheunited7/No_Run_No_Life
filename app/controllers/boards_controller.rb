@@ -29,7 +29,7 @@ class BoardsController < ApplicationController
 
   def update
     if @board.update(board_params)
-      redirect_to boards_path, notice: t('flash.board.update')
+      redirect_to board_path(@board), notice: t('flash.board.update')
     else
       render :edit
     end

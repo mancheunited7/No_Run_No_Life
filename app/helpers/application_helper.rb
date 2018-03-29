@@ -8,26 +8,26 @@ module ApplicationHelper
   end
 
   def comp_point(result)
-    result.competition_evaluation.competition_point.to_s.concat("点")
+    "#{result.competition_evaluation.competition_point&.to_s&.+'点'}"
   end
 
   def day_temperature(result)
-    result.weather_condition.day_temperature.to_s.concat("℃")
+    "#{result.weather_condition.day_temperature&.to_s&.+'℃'}"
   end
 
   def day_humidity(result)
-    result.weather_condition.day_humidity.to_s.concat("%")
+    "#{result.weather_condition.day_humidity&.to_s&.+'%'}"
   end
 
   def day_wind_speed(result)
-    result.weather_condition.day_wind_speed.to_s.concat("m/s")
+    "#{result.weather_condition.day_wind_speed&.to_s&.+'m/s'}"
   end
 
   def day_weight(result)
-    result.body_state.day_weight.to_s.concat("kg")
+    "#{result.body_state.day_weight&.to_s&.+'kg'}"
   end
 
   def day_body_fat(result)
-    result.body_state.day_body_fat.to_s.concat("%")
+    "#{result.body_state.day_body_fat&.to_s&.+'%'}"
   end
 end

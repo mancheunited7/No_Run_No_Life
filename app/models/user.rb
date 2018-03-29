@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :boards, dependent: :destroy
 
+  validates :name, presence: true
+
   def self.find_userinfo(auth)
     user = User.find_by(provider: auth.provider, userid: auth.uid)
 
@@ -23,16 +25,16 @@ class User < ApplicationRecord
       user.skip_confirmation!
       user.save
     end
-    return user
+    user
   end
 
   def self.create_uuid
     SecureRandom.uuid
   end
 
-  def self.run_level_up_decision(comp_result)
-    user = User.find_by(id: comp_result.user_id)
-    user.total_run_experience += comp_result.run_distance
+  def self.run_level_up_decision(user_id)
+    user = User.find(user_id)
+    user.total_run_experience = user.run_records.sum(:run_distance)
 
     if user.total_run_experience > RunExperience.find_by(run_level: user.run_level.to_i + 1).need_experience_point
       user.run_level += 1

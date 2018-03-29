@@ -1,12 +1,12 @@
 class CompetitionInfosController < ApplicationController
   before_action :authenticate_user!
-  
+
   require 'open-uri'
   require 'date'
 
   def index
     @q = CompetitionInfo.ransack(params[:q])
-    @competition_infos = @q.result.page(params[:page])
+    @competition_infos = @q.result.page(params[:page]).order(:competition_day)
   end
 
   def search
