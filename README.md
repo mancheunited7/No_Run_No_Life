@@ -1,24 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリ名
+No Run, No Life
 
-Things you may want to cover:
+## 概要
+ガチランナーもビギナーランナーも、生涯現役ランナーとして楽しく走り続けるためのランニングワンストップサービスを提供するWebアプリケーション
 
-* Ruby version
+## 機能詳細
+*日々の練習記録を走った距離、時間だけでなく、気象条件・心拍数・体脂肪率と、細かな数字まで管理
+*記録したデータをCSV出力で分析可能にし、今後の練習メニュー組み立てに役立てる!!
+*日々の記録を元に、走った距離、時間、体重をグラフ化し成長を一目で実感
+*大会記録を管理し、距離別ベストタイムを一目で把握
+*日々走った距離、大会での自己ベスト更新でラン経験値を貯めて、ランレベルアップを目指す!!
+*練習記録、大会記録の投稿に、全国のランナーから寄せられるコメント機能
+*グーグルマップに過去走った大会を表示、まだ走ったことのない都道府県を把握し、目指せ全国制覇!!
+*大会検索からエントリー、大会スケジュール管理までの一連の流れは、このシステムで完結!!
+*悩み、相談、ランナー仲間募集は、質問/募集コーナーから投稿
 
-* System dependencies
+## 開発環境
+ruby 2.3.0
+Rails 5.1.5
+Heroku
 
-* Configuration
+## 動作環境
+*macOS Sierra
+*Google Chrome ver64
+*Firefox Quantum ver58
 
-* Database creation
+注:これ以外の環境でも動作するかもしれませんが動作確認はしていません
 
-* Database initialization
+## バージョン
+1.0
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## ライセンス
+© 2018 Keita Morita
